@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="theme light EHoceA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRENUP PHOTOS - Isabel & Gino Wedding</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="bootstrap.min.css" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="IsabelGinoWedding.styles.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rouge+Script&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .carousel-item img {
+      height: 70vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar mb-3">
+	  <div class="container-fluid">
+		<a class="navbar-brand text-black" href="index.html" style="font-weight:bold;">Isabel &amp; Gino</a>
+
+		<!-- 👇 Toggler button for mobile -->
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+				aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+		  <ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link text-black" href="index.html">Home</a></li>
+			<li class="nav-item"><a class="nav-link text-black" href="entourage.html">Entourage</a></li>
+			<li class="nav-item"><a class="nav-link text-black" href="prenup.html">Prenup Photos</a></li>
+			<li class="nav-item"><a class="nav-link text-black" href="venue.html">Venues</a></li>
+			<li class="nav-item"><a class="nav-link text-black" href="attire.html">Attire</a></li>
+			<li class="nav-item"><a class="nav-link text-black" href="giftguide.html">Gift Guide</a></li>
+			<li class="nav-item"><a class="nav-link text-black" href="snapshot.html">Snap Shot</a></li>
+			<li class="nav-item"><a class="nav-link text-black" href="rsvp.html">RSVP</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+  </header>
+
+  <div class="container">
+    <main role="main" class="pb-3">
+      <!-- Bootstrap Carousel -->
+      <div id="weddingCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+        <div class="carousel-inner" id="carouselInner"></div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#weddingCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#weddingCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <p id="noPhotosMessage" class="text-center mt-3 d-none">No photos available.</p>
+    </main>
+  </div>
+
+  <footer class="border-top footer text-muted">
+    <div id="countdown" style="text-align:left; font-family:'Montserrat',sans-serif; font-size:1rem; color:black; margin-left:40px;">
+      <script src="site.js"></script>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="bootstrap.bundle.min.js"></script>
+  <script>
+    // Dynamically generate 30 slides
+    const totalPhotos = 21; <!-- add number of photos for slides -->
+    const galleryPath = 'gallery/';
+    const carouselInner = document.getElementById('carouselInner');
+    const indicators = document.getElementById('carouselIndicators');
+    const noPhotosMessage = document.getElementById('noPhotosMessage');
+
+    for (let i = 1; i <= totalPhotos; i++) {
+      const imgPath = `${galleryPath}photo${i}.jpeg`;
+
+      // Create indicator
+      const indicator = document.createElement('button');
+      indicator.type = 'button';
+      indicator.setAttribute('data-bs-target', '#weddingCarousel');
+      indicator.setAttribute('data-bs-slide-to', i - 1);
+      indicator.setAttribute('aria-label', `Slide ${i}`);
+      if (i === 1) {
+        indicator.classList.add('active');
+        indicator.setAttribute('aria-current', 'true');
+      }
+      indicators.appendChild(indicator);
+
+      // Create slide
+      const item = document.createElement('div');
+      item.classList.add('carousel-item');
+      if (i === 1) item.classList.add('active');
+
+      const img = document.createElement('img');
+      img.classList.add('d-block', 'w-100');
+      img.src = imgPath;
+      img.alt = `Prenup Photo ${i}`;
+
+      img.onerror = () => {
+        item.remove();
+        indicator.remove();
+        if (!carouselInner.children.length) noPhotosMessage.classList.remove('d-none');
+      };
+
+      item.appendChild(img);
+      carouselInner.appendChild(item);
+    }
+  </script>
+</body>
+</html>

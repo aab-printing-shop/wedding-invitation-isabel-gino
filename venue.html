@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="theme light EHoceA">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VENUE - Isabel & Gino Wedding</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap.min.css" />
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="IsabelGinoWedding.styles.css" asp-append-version="true" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rouge+Script&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbar mb-3">
+		  <div class="container-fluid">
+			<a class="navbar-brand text-black" href="index.html" style="font-weight:bold;">Isabel &amp; Gino</a>
+
+			<!-- 👇 Toggler button for mobile -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+					aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+			  <ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link text-black" href="index.html">Home</a></li>
+				<li class="nav-item"><a class="nav-link text-black" href="entourage.html">Entourage</a></li>
+				<li class="nav-item"><a class="nav-link text-black" href="prenup.html">Prenup Photos</a></li>
+				<li class="nav-item"><a class="nav-link text-black" href="venue.html">Venues</a></li>
+				<li class="nav-item"><a class="nav-link text-black" href="attire.html">Attire</a></li>
+				<li class="nav-item"><a class="nav-link text-black" href="giftguide.html">Gift Guide</a></li>
+				<li class="nav-item"><a class="nav-link text-black" href="snapshot.html">Snap Shot</a></li>
+				<li class="nav-item"><a class="nav-link text-black" href="rsvp.html">RSVP</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="image-row">
+				<div class="image-container">
+					<img src="church.png" alt="Church" class="wedding-image">
+					<button class="image-btn" 
+						onclick="window.open('https://www.google.com/maps/place/Saint+Rose+of+Lima+Parish/@@13.2944608,123.7923091,553m/data=!3m2!1e3!4b1!4m16!1m9!4m8!1m0!1m6!1m2!1s0x33a1ab53cd300cd7:0x59c4d104ca0f3363!2sSaint+Rose+of+Lima+Parish,+Bes+Street,+Bacacay,+4509,+Albay,+4509!2m2!1d123.7935966!2d13.2944582!3m5!1s0x33a1ab53cd300cd7:0x59c4d104ca0f3363!8m2!3d13.2944582!4d123.7935966!16s%2Fg%2F1hc7jzs04?entry=ttu', '_blank')">
+									<strong>View Church Location</strong>
+					</button>
+				</div>
+
+				<div class="image-container">
+					<img src="RECEPTION.png" alt="Reception" class="wedding-image">
+					<button class="image-btn"
+							onclick="window.open('https://www.google.com/maps/dir/Rosen+Garten,+Bacacay,+Albay/8Q7C%2B3CP,+Bacacay,+Albay/@@13.3128029,123.7298854,13z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x33a1ac970b15fca7:0xfb9e2e3fdb10b81e!2m2!1d123.771085!2d13.3127227!1m5!1m1!1s0x33a1ac970b15fca7:0xfb9e2e3fdb10b81e!2m2!1d123.771085!2d13.3127227?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D', '_blank')">
+						<strong>View Reception Details</strong>
+					</button>
+				</div>
+			</div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div id="countdown" style="text-align:left; font-family:'Montserrat',sans-serif; font-size:1rem; color:black; margin-left:40px;">
+            <script src="site.js" asp-append-version="true"></script>             
+        </div>    
+    </footer>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="site.js" asp-append-version="true"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
