@@ -100,7 +100,12 @@ img {
   font-size: 2rem;
   margin: 1rem 0;
 }
+.couple-photo {
+    width: 300px;
+    height: auto;
+    mix-blend-mode: multiply; /* or darken */
 
+}
 .venue-details {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -440,3 +445,4 @@ footer {
     padding: 15px;
   }
 }
+
