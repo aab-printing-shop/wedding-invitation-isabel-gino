@@ -197,12 +197,16 @@ img {
 }
 
 .wedding-image {
-  width: 450px;
-  height: 650px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: contain;      /* show full image, no cropping */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: block;
+  max-width: 600px;         /* optional limit */
+  margin: 0 auto;           /* centers image */
 }
+
 
 /* ===================================
    ATTIRE PAGE
@@ -445,4 +449,5 @@ footer {
     padding: 15px;
   }
 }
+
 
