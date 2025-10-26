@@ -352,7 +352,7 @@ img {
   align-items: start;
 }
 
-.rsvp-text h1 {
+.rsvp-text h1,h3,h5 {
   font-family: 'Rouge Script', cursive;
   font-size: 160px;
   margin-bottom: 1rem;
@@ -469,5 +469,6 @@ footer {
     padding: 15px;
   }
 }
+
 
 
